@@ -1,77 +1,80 @@
 <html>
-  <head>
-    <script src="/Kanbas/Navigation/index.js"></script>
-    <script src="/Kanbas/Account/Navigation/index.js"></script>
-  </head>
-  <body>
-    <table width="100%">
-      <tbody>
-        <tr>
-          <td valign="top">
-            <script>
-              const kanbasNavigation = KanbasNavigation();
-              document.write(kanbasNavigation);
-            </script>
-          </td>
-          <td valign="top">
-            <script>
-              const courseNavigation = AccountNavigation("Profile");
-              document.write(courseNavigation);
-            </script>
-          </td>
-          <td valign="top">
-            <h2>Divyendu Shekhar</h2>
-            <p style="display: inline-block">Name:* </p>
-            <input type="text"></input>
-            <p style="display: inline-block">Pronouns: </p>
-            <select>
-              <option>He/Him</option>
-              <option>She/Her</option>
-              <option>They/Them</option>
-              <option>Other</option>
-            </select>
-            <br>
-            <p style="display: inline-block">Title: </p>
-            <input type="text"></input>
-            <h1>Contact</h1>
-            <p>No Registered services, you can add some on the settings page</p>
-            <h1>Biography</h1>
-            <p>Student, Software Engineer</p>
-            <textarea name="biography" id="" cols="50" rows="5">Student, Software Engineer</textarea>
-            <h1>Links</h1>
-            <ol>
-              <li><a href="https://www.linkedin.com/in/divysh">LinkedIn</a></li>
-            </ol>
-            <table width="100%">
-              <tbody>
-                <tr>
-                  <td valign="top">
-                    <h3>Title</h3>
-                  </td>
-                  <td valign="top">
-                    <h3>URL</h3>
-                  </td>
-                </tr>
-                <tr>
-                  <td valign="top">
-                    <input type="text" value="LinkedIn">
-                  </td>
-                  <td valign="top">
-                    <input type="text" value="https://www.linkedin.com/in/divysh">
-                  </td>
-                  <td valign="top">
-                    <button>Remove</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <button>Add Another Link</button>
-            <a href="/Kanbas/Account/Profile/screen.html"><button>Save Profile</button></a>
-            <a href="/Kanbas/Account/Profile/Edit/screen.html"><button>Edit Profile</button></a>
-            <a href="/Kanbas/Account/Profile/screen.html"><button>Cancel Editing</button></a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </body>
+
+<head>
+  <script src="/Kanbas/Navigation/index.js"></script>
+  <script src="/Kanbas/Account/Navigation/index.js"></script>
+</head>
+
+<body>
+  <table width="100%">
+    <tbody>
+      <tr>
+        <td valign="top">
+          <script>
+            const kanbasNavigation = KanbasNavigation();
+            document.write(kanbasNavigation);
+          </script>
+        </td>
+        <td valign="top">
+          <script>
+            const courseNavigation = AccountNavigation("Profile");
+            document.write(courseNavigation);
+          </script>
+        </td>
+        <td valign="top">
+          <h2>Divyendu Shekhar</h2>
+          <p style="display: inline-block">Name:* </p>
+          <input type="text"></input>
+          <p style="display: inline-block">Pronouns: </p>
+          <select>
+            <option>He/Him</option>
+            <option>She/Her</option>
+            <option>They/Them</option>
+            <option>Other</option>
+          </select>
+          <br>
+          <p style="display: inline-block">Title: </p>
+          <input type="text"></input>
+          <h1>Contact</h1>
+          <p>No Registered services, you can add some on the settings page</p>
+          <h1>Biography</h1>
+          <p>Student, Software Engineer</p>
+          <textarea name="biography" id="" cols="50" rows="5">Student, Software Engineer</textarea>
+          <h1>Links</h1>
+          <ol>
+            <li><a href="https://www.linkedin.com/in/divysh">LinkedIn</a></li>
+          </ol>
+          <table width="100%">
+            <tbody>
+              <tr>
+                <td valign="top">
+                  <h3>Title</h3>
+                </td>
+                <td valign="top">
+                  <h3>URL</h3>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">
+                  <input type="text" value="LinkedIn">
+                </td>
+                <td valign="top">
+                  <input type="text" value="https://www.linkedin.com/in/divysh">
+                </td>
+                <td valign="top">
+                  <button>Remove</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button>Add Another Link</button>
+          <a href="/Kanbas/Account/Profile/screen.html"><button>Save Profile</button></a>
+          <a href="/Kanbas/Account/Profile/Edit/screen.html"><button>Edit Profile</button></a>
+          <a href="/Kanbas/Account/Profile/screen.html"><button>Cancel Editing</button></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
 </html>

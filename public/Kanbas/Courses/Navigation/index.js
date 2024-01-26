@@ -6,10 +6,22 @@ function CourseNavigation(location) {
     },
     {
       name: "Modules",
-      url: "/Kanbas/Courses/Modules/screen.html",
+      url: "#",
     },
     {
       name: "Piazza",
+      url: "#",
+    },
+    {
+      name: "Zoom Meetings",
+      url: "#",
+    },
+    {
+      name: "Assignments",
+      url: "/Kanbas/Courses/Assignments/screen.html",
+    },
+    {
+      name: "Quizzes",
       url: "#",
     },
     {
@@ -17,8 +29,48 @@ function CourseNavigation(location) {
       url: "/Kanbas/Courses/Grades/screen.html",
     },
     {
-      name: "Assignments",
-      url: "/Kanbas/Courses/Assignments/screen.html",
+      name: "People",
+      url: "#",
+    },
+    {
+      name: "Panoppto Video",
+      url: "#",
+    },
+    {
+      name: "Discussions",
+      url: "#",
+    },
+    {
+      name: "Announcements",
+      url: "#",
+    },
+    {
+      name: "Pages",
+      url: "#",
+    },
+    {
+      name: "Files",
+      url: "#",
+    },
+    {
+      name: "Rubrics",
+      url: "#",
+    },
+    {
+      name: "Outcomes",
+      url: "#",
+    },
+    {
+      name: "Collaboration",
+      url: "#",
+    },
+    {
+      name: "Syllabus",
+      url: "#",
+    },
+    {
+      name: "Settings",
+      url: "/Kanbas/Courses/Settings/CourseDetails/screen.html",
     },
   ];
 

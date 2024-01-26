@@ -6,7 +6,7 @@ function KanbasNavigation() {
     },
     {
       name: "Dashboard",
-      url: "/Kanbas/Dashboard/screen.html",
+      url: "#",
     },
     {
       name: "Courses",
@@ -18,6 +18,22 @@ function KanbasNavigation() {
     },
     {
       name: "Inbox",
+      url: "#",
+    },
+    {
+      name: "History",
+      url: "#",
+    },
+    {
+      name: "Studio",
+      url: "#",
+    },
+    {
+      name: "Commons",
+      url: "#",
+    },
+    {
+      name: "Help",
       url: "#",
     },
   ];

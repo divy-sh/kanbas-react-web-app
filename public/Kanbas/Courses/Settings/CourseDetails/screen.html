@@ -1,0 +1,127 @@
+<html>
+  <head>
+    <script src="/Kanbas/Navigation/index.js"></script>
+    <script src="/Kanbas/Courses/Navigation/index.js"></script>
+    <script src="/Kanbas/Courses/Settings/Navigation/index.js"></script>
+  </head>
+  <body>
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td valign="top">
+            <script>
+              const kanbasNavigation = KanbasNavigation();
+              document.write(kanbasNavigation);
+            </script>
+          </td>
+          <td valign="top">
+            <script>
+              const courseNavigation = CourseNavigation("Assignments");
+              document.write(courseNavigation);
+            </script>
+          </td>
+          <td valign="top">
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <script>
+                            const settingsNavigation = SettingsNavigation();
+                            document.write(settingsNavigation);
+                          </script>
+                    </tr>
+                </tbody>
+            </table>
+            <h1>Course Details</h1>
+            <p>Image: <input type="file" id="image" name="image" accept="image/*"></p>
+            <p>Name: Course One</p>
+            <p>Course Code: 2</p>
+            <p>Blueprint Course: No</p>
+            <p>Course Template: <input type="checkbox"> Enable sourse as a course template</p>
+            <p>
+                TimeZone:
+                <select id="TimeZone">
+                    <option value="-5:00">Eastern Time -5:00 hrs</option>
+                    <option value="0:00">UK Time 0:00 hrs</option>
+                    <option selected value="+5:30">IST +5:30 hrs</option>
+                </select>
+            </p>
+            <p>SIS ID: SIS ID 1</p>
+            <p>Subaccount: Subaccount 1</p>
+            <p>Term: Spring 2024 Semester Full Term</p>
+            <p>
+                Participation: 
+                <select id="Term">
+                    <option selected value="Term">Term</option>
+                    <option value="quarter">Quarter</option>
+                    <option value="Semester">Semester</option>
+                </select>
+            </p>
+            <h4>Start</h4>
+            <input type="date" name="Start" id="Start">
+            <h4>End</h4>
+            <input type="date" name="end" id="end">
+            <p><input type="checkbox"> Restrict students from viewing course before term date</p>
+            <p><input type="checkbox"> Restrict students from viewing course after term date</p>
+            <p>
+                Default Due Time: 
+                <select id="duetime">
+                    <option selected value="11:59 PM">11:59 PM</option>
+                    <option value="9:00 PM">9:00 PM</option>
+                    <option value="4:00 PM">4:00 PM</option>
+                </select>
+                <br>
+                This influences the user interface for setting due dates. 
+                It does not change the time due for any existing assignments.
+            </p>
+            <p>
+                Language: 
+                <select id="language">
+                    <option selected value="English">English</option>
+                    <option value="French">French</option>
+                    <option value="Italian">Italian</option>
+                </select>
+                <br>
+                This will override any user/system language preferences. 
+                This is only recommended for foreign language courses.
+            </p>
+            <p>File Storage: 10000 MegaBytes</p>
+            <p>Large Course: <input type="checkbox"> Launch SpeedGrader Filtered by Student Group</p>
+            <p>Grading Scheme: <input type="checkbox"> Enable course grading scheme</p>
+            <p>
+                License: 
+                <select id="license">
+                    <option selected value="Private">Private (Copyrighted)</option>
+                    <option value="pd">Public Domain</option>
+                    <option value="r">Restriced</option>
+                </select>
+            </p>
+            <p>File Copyright: <input type="checkbox"> 
+                Copyright and license information must be provided 
+                for files before they are published
+            </p>
+            <p>
+                Visibility: If you need to make your course public please contact your administration/support.
+                <br>
+                <select disabled id="visibility">
+                    <option selected value="Course">Course</option>
+                </select>
+            </p>
+            <p><input disabled type="checkbox"> Include the course in public course index</p>
+            <p>
+                Format: 
+                <select id="format">
+                    <option selected value="oncampur">On Campus</option>
+                    <option value="online">Online</option>
+                    <option value="Hybrid">Hybrid</option>
+                </select>
+            </p>
+            <p>Mastery Paths: <input type="checkbox"> Enable individual learning paths for students based on assessment</p>
+            <p>Description: <textarea name="biography" id="" cols="50" rows="5"></textarea></p>
+            <p><a href="#">More Options</a></p>
+            <a href="/Kanbas/Courses/Home/screen.html"><button>Update Course details</button></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

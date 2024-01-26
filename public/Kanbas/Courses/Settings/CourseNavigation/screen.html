@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <script src="/Kanbas/Navigation/index.js"></script>
+    <script src="/Kanbas/Courses/Navigation/index.js"></script>
+    <script src="/Kanbas/Courses/Settings/Navigation/index.js"></script>
+  </head>
+  <body>
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td valign="top">
+            <script>
+              const kanbasNavigation = KanbasNavigation();
+              document.write(kanbasNavigation);
+            </script>
+          </td>
+          <td valign="top">
+            <script>
+              const courseNavigation = CourseNavigation("Assignments");
+              document.write(courseNavigation);
+            </script>
+          </td>
+          <td valign="top">
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <script>
+                            const settingsNavigation = SettingsNavigation();
+                            document.write(settingsNavigation);
+                          </script>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Drag and drop items to reorder them in the course navigation.</p>
+            <table border="1">
+              <tbody>
+                <tr><td>Home</td></tr>
+                <tr><td>Modules</td></tr>
+                <tr><td>Piazza</td></tr>
+                <tr><td>Grades</td></tr>
+                <tr><td>Assignments</td></tr>
+                <tr><td>Settings</td></tr>
+              </tbody>
+            </table>
+            <p>
+              Drag items here to hide from students. 
+              <br>
+              Disabling most pages will cause students who visit those pages to be redirected to the course home page.
+            </p>
+            <table border="1">
+              <tbody>
+                <tr><td>Chat</td></tr>
+                <tr><td>SCORM</td></tr>
+                <tr><td>Attendance</td></tr>
+                <tr><td>Digication</td></tr>
+              </tbody>
+            </table>
+            <p><a href="/Kanbas/Courses/Home/screen.html"><Button>Save</Button></a></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
