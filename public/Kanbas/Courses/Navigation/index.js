@@ -13,7 +13,7 @@ function CourseNavigation(location) {
       url: "#",
     },
     {
-      name: "Zoom Meetings",
+      name: "Zoom",
       url: "#",
     },
     {
@@ -33,49 +33,13 @@ function CourseNavigation(location) {
       url: "#",
     },
     {
-      name: "Panoppto Video",
-      url: "#",
-    },
-    {
-      name: "Discussions",
-      url: "#",
-    },
-    {
-      name: "Announcements",
-      url: "#",
-    },
-    {
-      name: "Pages",
-      url: "#",
-    },
-    {
-      name: "Files",
-      url: "#",
-    },
-    {
-      name: "Rubrics",
-      url: "#",
-    },
-    {
-      name: "Outcomes",
-      url: "#",
-    },
-    {
-      name: "Collaboration",
-      url: "#",
-    },
-    {
-      name: "Syllabus",
-      url: "#",
-    },
-    {
       name: "Settings",
       url: "/Kanbas/Courses/Settings/CourseDetails/screen.html",
     },
   ];
 
   return `
-    <ul>
+    <ul class="wd-navigation">
         ${links
           .map((link) => {
             return `
