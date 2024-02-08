@@ -42,8 +42,9 @@ function CourseNavigation(location) {
     <ul class="wd-navigation">
         ${links
           .map((link) => {
+            const isActive = link.name === location ? 'wd-active' : '';
             return `
-                <li><a href="${link.url}">${link.name}</a></li>
+                <li class="${isActive}"><a class="${isActive}" href="${link.url}">${link.name}</a></li>
                 `;
           })
           .join("")}

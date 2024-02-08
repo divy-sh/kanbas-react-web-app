@@ -16,12 +16,12 @@
   <div class="d-flex">
     <div class="d-none d-md-block">
       <ul class="wd-kanbas-navigation" style="height: 100%;">
-          <script>
-              const kanbasNavigation = KanbasNavigation("Courses");
-              document.write(kanbasNavigation);
-          </script>
+        <script>
+          const kanbasNavigation = KanbasNavigation("Courses");
+          document.write(kanbasNavigation);
+        </script>
       </ul>
-  </div>
+    </div>
     <div class="d-none d-md-block">
       <ul class="wd-navigation">
         <script>
@@ -42,6 +42,7 @@
         </select>
       </div>
       <button class="btn btn-danger">+ Module</button>
+      <hr />
       <ul class="list-group wd-modules">
         <li class="list-group-item">
           <div>
@@ -103,10 +104,16 @@
         <tbody>
           <tr>
             <td>
-              <button class="btn btn-light w-100">Unpublish</button>
+              <button class="btn btn-light w-100">
+                <i class="fa-solid fa-ban"></i>
+                Unpublish
+              </button>
             </td>
             <td>
-              <button class="btn btn-success w-100">Publish</button>
+              <button class="btn btn-success w-100">
+                <i class="fa fa-check-circle"></i>
+                Publish
+              </button>
             </td>
           </tr>
         </tbody>

@@ -1,10 +1,102 @@
 <html>
+
 <head>
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="/Kanbas/styles.css" />
+  <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
+  <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
+  <link rel="stylesheet" href="/Kanbas/Courses/Home/index.css" />
+  <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" />
   <script src="/Kanbas/Navigation/index.js"></script>
   <script src="/Kanbas/Courses/Navigation/index.js"></script>
 </head>
+
 <body>
-  <table width="100%">
+  <div class="d-flex">
+    <div class="d-none d-md-block">
+      <ul class="wd-kanbas-navigation" style="height: 100%;">
+        <script>
+          const kanbasNavigation = KanbasNavigation("Courses");
+          document.write(kanbasNavigation);
+        </script>
+      </ul>
+    </div>
+    <div class="d-none d-md-block">
+      <ul class="wd-navigation">
+        <script>
+          const courseNavigation = CourseNavigation("Assignments");
+          document.write(courseNavigation);
+        </script>
+      </ul>
+    </div>
+    <div class="flex-fill">
+      <div class="d-flex justify-content-between">
+        <input type="text" placeholder="Search for Assignment">
+        <div>
+          <button class="btn btn-light">+ Group</button>
+          <button class="btn btn-danger">+ Assignment</button>
+          <button class="btn btn-light"><i class="fa fa-ellipsis-v ms-2"></i></button>
+        </div>
+      </div>
+      <hr />
+      <ul class="list-group wd-modules">
+        <li class="list-group-item">
+          <div>
+            <i class="fa fa-ellipsis-v"></i> Week 1
+            <span class="float-end">
+              <i class="fa fa-check-circle text-success"></i>
+              <i class="fa fa-plus ms-2"></i>
+              <i class="fa fa-ellipsis-v ms-2"></i>
+            </span>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <i class="fa fa-ellipsis-v"></i> Learning Objectives
+              <span class="float-end">
+                <i class="fa fa-check-circle text-success"></i>
+                <i class="fa fa-ellipsis-v ms-2"></i>
+              </span>
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-ellipsis-v"></i> Introduction to the course
+              <span class="float-end">
+                <i class="fa fa-check-circle text-success"></i>
+                <i class="fa fa-ellipsis-v ms-2"></i>
+              </span>
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-ellipsis-v"></i> Learn what is Web Development
+              <span class="float-end">
+                <i class="fa fa-check-circle text-success"></i>
+                <i class="fa fa-ellipsis-v ms-2"></i>
+              </span>
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <div>
+            <i class="fa fa-ellipsis-v"></i> Week 2
+            <span class="float-end">
+              <i class="fa fa-check-circle text-success"></i>
+              <i class="fa fa-plus ms-2"></i>
+              <i class="fa fa-ellipsis-v ms-2"></i>
+            </span>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <i class="fa fa-ellipsis-v"></i> Learning Objectives
+              <span class="float-end">
+                <i class="fa fa-check-circle text-success"></i>
+                <i class="fa fa-ellipsis-v ms-2"></i>
+              </span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- <table width="100%">
     <tbody>
       <tr>
         <td valign="top">
@@ -104,7 +196,7 @@
         </td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
 </body>
 
 </html>

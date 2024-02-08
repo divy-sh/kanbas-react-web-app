@@ -1,26 +1,43 @@
 <html>
 
 <head>
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="/Kanbas/styles.css" />
+  <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
+  <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
+  <link rel="stylesheet" href="/Kanbas/Courses/Home/index.css" />
+  <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" />
   <script src="/Kanbas/Navigation/index.js"></script>
   <script src="/Kanbas/Courses/Navigation/index.js"></script>
 </head>
 
 <body>
+  <div class="d-flex">
+    <div class="d-none d-md-block">
+      <ul class="wd-kanbas-navigation" style="height: 100%;">
+        <script>
+          const kanbasNavigation = KanbasNavigation("Courses");
+          document.write(kanbasNavigation);
+        </script>
+      </ul>
+    </div>
+    <div class="d-none d-md-block">
+      <ul class="wd-navigation">
+        <script>
+          const courseNavigation = CourseNavigation("Grades");
+          document.write(courseNavigation);
+        </script>
+      </ul>
+    </div>
+  </div>
   <form action="/Kanbas/Courses/Assignments/screen.html">
     <table width="100%">
       <tbody>
         <tr>
           <td valign="top">
-            <script>
-              const kanbasNavigation = KanbasNavigation("Courses");
-              document.write(kanbasNavigation);
-            </script>
           </td>
           <td valign="top">
-            <script>
-              const courseNavigation = CourseNavigation("Assignments");
-              document.write(courseNavigation);
-            </script>
           <td valign="top">
             <h3>Assignment</h3>
             <p><input value="Assignment 1 - HTML Tags" type="text"></p>
