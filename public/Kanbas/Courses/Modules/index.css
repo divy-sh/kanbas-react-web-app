@@ -17,12 +17,12 @@
 }
 
 .wd-modules > li > div {
-  padding: 6px;
+  padding: 16px 10px 16px 10px;
   border-left: 1px solid gray !important;
 }
 
 .wd-modules > li > ul > li {
-  padding: 5px;
+  padding: 10px;
   border-top: 1px solid gray !important;
   border-left: 2px solid green;
 }

@@ -9,10 +9,19 @@ body * {
 
 .btn {
   border-radius: 0;
-  border: 1px solid #808080;
+  border: 1px solid #a8a8a8;
   margin: 2px;
+  font-size: 14px;
 }
 
 .form-select {
   border-radius: 0;
+}
+
+.breadcrumb {
+  font-size: 20px;
+}
+
+.status-button {
+  text-align: left;
 }
