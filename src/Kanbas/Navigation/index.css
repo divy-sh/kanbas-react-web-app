@@ -11,7 +11,7 @@
   .wd-kanbas-navigation li.wd-active {
     background-color: white;
   }
-  .wd-kanbas-navigation li.wd-active a {
+  .wd-kanbas-navigation li.red-text a {
     color: red;
   }
   .wd-kanbas-navigation a {

@@ -2,7 +2,11 @@ import { courses } from "../../Kanbas/Database";
 import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import { HiMiniBars3 } from "react-icons/hi2";
 import CourseNavigation from "./Navigation";
-
+import Modules from "./Modules";
+import Home from "./Home";
+import Assignments from "./Assignments";
+import AssignmentEditor from "./Assignments/Editor";
+import Grades from "./Grades";
 
 function Courses() {
   const { courseId } = useParams();
@@ -17,12 +21,16 @@ function Courses() {
           style={{ left: "320px", top: "50px" }} >
           <Routes>
             <Route path="/" element={<Navigate to="Home" />} />
-            <Route path="Home" element={<h1>Home</h1>} />
-            <Route path="Modules" element={<h1>Modules</h1>} />
+            <Route path="Home" element={<Home />} />
+            <Route path="Modules" element={<Modules />} />
             <Route path="Piazza" element={<h1>Piazza</h1>} />
-            <Route path="Assignments" element={<h1>Assignments</h1>} />
-            <Route path="Assignments/:assignmentId" element={<h1>Assignment Editor</h1>} />
-            <Route path="Grades" element={<h1>Grades</h1>} />
+            <Route path="Zoom" element={<h1>Zoom</h1>} />
+            <Route path="Assignments" element={<Assignments />} />
+            <Route path="Assignments/:assignmentId" element={<AssignmentEditor />} />
+            <Route path="Quizzes" element={<h1>Quizzes</h1>} />
+            <Route path="Grades" element={<Grades />} />
+            <Route path="People" element={<h1>People</h1>} />
+            <Route path="Settings" element={<h1>Settings</h1>} />
           </Routes>
         </div>
       </div>
