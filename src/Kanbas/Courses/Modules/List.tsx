@@ -9,8 +9,8 @@ function ModuleList() {
   const [selectedModule, setSelectedModule] = useState(modulesList[0]);
   return (
     <>
-      {/* <!-- Add buttons here --> */}
-      <ul className="list-group wd-modules">
+    <div className="wd-modules">
+    <ul className="list-group wd-modules">
         {modulesList.map((module, index) => (
           <li key={index}
             className="list-group-item"
@@ -41,6 +41,7 @@ function ModuleList() {
           </li>
         ))}
       </ul>
+    </div>
     </>
   );
 }

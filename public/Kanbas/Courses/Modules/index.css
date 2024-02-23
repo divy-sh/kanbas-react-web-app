@@ -12,18 +12,18 @@
 
 .wd-modules > li {
   background-color: lightgray;
-  border: 1px solid gray !important;
-  border-left: none !important;
+  border: 1px solid gray;
+  border-left: none;
 }
 
 .wd-modules > li > div {
   padding: 16px 10px 16px 10px;
-  border-left: 1px solid gray !important;
+  border-left: 1px solid gray;
 }
 
 .wd-modules > li > ul > li {
   padding: 10px;
-  border-top: 1px solid gray !important;
+  border-top: 1px solid gray;
   border-left: 2px solid green;
 }
 
