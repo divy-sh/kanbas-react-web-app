@@ -1,15 +1,15 @@
 import React from "react";
-import { FaCheckCircle, FaEllipsisV, FaPlusCircle } from "react-icons/fa";
+import { FaCheckCircle, FaEllipsisV, FaPlusCircle, FaTrash } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { KanbasState } from "../../Store";
-import { setassignment, initialStateExport } from "./Reducer";
+import { setassignment, initialStateExport, deleteassignment } from "./Reducer";
 import { useNavigate } from 'react-router-dom';
 
 
 function Assignments() {
     const { courseId } = useParams();
-    const assignmentList : any = useSelector((state: KanbasState) => state.assignmentsReducer.assignments);
+    const assignmentList: any = useSelector((state: KanbasState) => state.assignmentsReducer.assignments);
     const assignment = useSelector((state: KanbasState) => state.assignmentsReducer.assignment);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -22,7 +22,7 @@ function Assignments() {
                 </div>
                 <div className="col-6">
                     <button className="btn btn-light float-end m-1"><FaEllipsisV className="ms-2" /></button>
-                    <button className="btn btn-danger float-end m-1" onClick={() => { dispatch(setassignment(initialStateExport.assignment));editAssignment()}}>+ Assignment</button>
+                    <button className="btn btn-danger float-end m-1" onClick={() => { dispatch(setassignment(initialStateExport.assignment)); editAssignment() }}>+ Assignment</button>
                     <button className="btn btn-light float-end m-1">+ Group</button>
                 </div>
             </div>
@@ -37,12 +37,13 @@ function Assignments() {
                         </span>
                     </div>
                     <ul className="list-group">
-                        {assignmentList.filter((assignment : any) => assignment.course === courseId).map((assignment : any) => (
+                        {assignmentList.filter((assignment: any) => assignment.course === courseId).map((assignment: any) => (
                             <li key={assignment._id} className="list-group-item">
                                 <FaEllipsisV className="me-2" />
                                 <Link onClick={() => dispatch(setassignment(assignment))}
                                     to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}>{assignment.title}</Link>
                                 <span className="float-end">
+                                    <FaTrash className="ms-2 me-2" onClick={() => dispatch(deleteassignment(assignment._id))} />
                                     <FaCheckCircle className="text-success" /><FaEllipsisV className="ms-2" /></span>
                             </li>))}
                     </ul>
