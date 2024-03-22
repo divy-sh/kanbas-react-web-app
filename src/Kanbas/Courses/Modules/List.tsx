@@ -15,14 +15,16 @@ function ModuleList() {
   return (
     <>
       <li className="list-group-item">
-        <input value={module.name}
+        <h5>Module Name</h5>
+        <input className="form-control" value={module.name}
           onChange={(e) => dispatch(setModule({ ...module, name: e.target.value }))}
         />
-        <textarea value={module.description}
+        <h5>Module Description</h5>
+        <textarea className="form-control" value={module.description}
           onChange={(e) => dispatch(setModule({ ...module, description: e.target.value }))}
         />
-        <button onClick={() => dispatch(addModule({ ...module, course: courseId }))}>Add</button>
-        <button onClick={() => dispatch(updateModule(module))}>Update</button>
+        <button className="btn btn-primary mt-2" onClick={() => dispatch(addModule({ ...module, course: courseId }))}>Add</button>
+        <button className="btn btn primary mt-2" onClick={() => dispatch(updateModule(module))}>Update</button>
       </li>
       <div className="wd-modules">
         <ul className="list-group wd-modules">
