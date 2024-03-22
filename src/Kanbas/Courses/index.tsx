@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import { CourseNavigation } from "./Navigation";
 import Modules from "./Modules";
 import Home from "./Home";
@@ -7,7 +7,9 @@ import AssignmentEditor from "./Assignments/Editor";
 import Grades from "./Grades";
 import TopBar from "./TopBar";
 
-function Courses() {
+function Courses({ courses }: { courses: any[]; }) {
+  const { courseId } = useParams();
+  const course = courses.find((course) => course._id === courseId);
   return (
     <div>
       <div className="d-none d-md-block">

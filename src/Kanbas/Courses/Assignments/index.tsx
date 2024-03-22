@@ -1,11 +1,19 @@
 import React from "react";
 import { FaCheckCircle, FaEllipsisV, FaPlusCircle } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
-import { assignments } from "../../Database";
+import { useSelector, useDispatch } from "react-redux";
+import { KanbasState } from "../../Store";
+import { setassignment, initialStateExport } from "./Reducer";
+import { useNavigate } from 'react-router-dom';
+
+
 function Assignments() {
     const { courseId } = useParams();
-    const assignmentList = assignments.filter(
-        (assignment) => assignment.course === courseId);
+    const assignmentList : any = useSelector((state: KanbasState) => state.assignmentsReducer.assignments);
+    const assignment = useSelector((state: KanbasState) => state.assignmentsReducer.assignment);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const editAssignment = () => navigate(`/Kanbas/Courses/${courseId}/Assignments/${null}`);
     return (
         <>
             <div className="row">
@@ -14,14 +22,13 @@ function Assignments() {
                 </div>
                 <div className="col-6">
                     <button className="btn btn-light float-end m-1"><FaEllipsisV className="ms-2" /></button>
-                    <button className="btn btn-danger float-end m-1">+ Assignment</button>
+                    <button className="btn btn-danger float-end m-1" onClick={() => { dispatch(setassignment(initialStateExport.assignment));editAssignment()}}>+ Assignment</button>
                     <button className="btn btn-light float-end m-1">+ Group</button>
                 </div>
             </div>
             <ul className="wd-modules list-group">
                 <li className="list-group-item">
                     <div>
-
                         <FaEllipsisV className="me-2" /> ASSIGNMENTS
                         <span className="float-end">
                             <span className="rounded-div" style={{ padding: "5px", border: "1px solid black", borderRadius: "50px" }}>40% of Total</span>
@@ -30,10 +37,10 @@ function Assignments() {
                         </span>
                     </div>
                     <ul className="list-group">
-                        {assignmentList.map((assignment) => (
-                            <li className="list-group-item">
+                        {assignmentList.filter((assignment : any) => assignment.course === courseId).map((assignment : any) => (
+                            <li key={assignment._id} className="list-group-item">
                                 <FaEllipsisV className="me-2" />
-                                <Link
+                                <Link onClick={() => dispatch(setassignment(assignment))}
                                     to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}>{assignment.title}</Link>
                                 <span className="float-end">
                                     <FaCheckCircle className="text-success" /><FaEllipsisV className="ms-2" /></span>

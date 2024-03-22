@@ -22,7 +22,6 @@ import Spreading from "./json/Spreading";
 import Destructing from "./json/Destructing";
 import FunctionDestructing from "./functions/FunctionDestructing";
 function JavaScript() {
-   console.log('Hello World!');
    return(
       <div>
          <h1>JavaScript</h1>
