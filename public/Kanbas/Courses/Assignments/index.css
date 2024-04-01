@@ -1,0 +1,17 @@
+.rounded-div {
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+
+.assignment {
+    display: inline-block;
+}
+
+.assignment-anchor {
+    color: black;
+    text-decoration: none;
+}
+.container {
+    padding: 20px;
+}
