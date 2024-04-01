@@ -6,10 +6,7 @@ import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
 import Grades from "./Grades";
 import TopBar from "./TopBar";
-
-function Courses({ courses }: { courses: any[]; }) {
-  const { courseId } = useParams();
-  const course = courses.find((course) => course._id === courseId);
+function Courses() {
   return (
     <div>
       <div className="d-none d-md-block">
@@ -28,7 +25,10 @@ function Courses({ courses }: { courses: any[]; }) {
               <Route path="Piazza" element={<h1>Piazza</h1>} />
               <Route path="Zoom" element={<h1>Zoom</h1>} />
               <Route path="Assignments" element={<Assignments />} />
-              <Route path="Assignments/:assignmentId" element={<AssignmentEditor />} />
+              <Route
+                path="Assignments/:assignmentId"
+                element={<AssignmentEditor />}
+              />
               <Route path="Quizzes" element={<h1>Quizzes</h1>} />
               <Route path="Grades" element={<Grades />} />
               <Route path="People" element={<h1>People</h1>} />
