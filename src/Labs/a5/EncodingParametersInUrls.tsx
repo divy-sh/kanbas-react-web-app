@@ -6,7 +6,7 @@ function EncodingParametersInURLs() {
   const [b, setB] = useState(23);
   const [welcome, setWelcome] = useState("");
   const fetchWelcome = async () => {
-    const response = await axios.get("http://localhost:4000/a5/welcome");
+    const response = await axios.get("https://kanbas-node-server-app-0fo0.onrender.com/a5/welcome");
     setWelcome(response.data);
   };
   useEffect(() => {
@@ -14,12 +14,12 @@ function EncodingParametersInURLs() {
   }, []);
   const [result, setResult] = useState(0);
   const fetchSum = async (a: any, b: any) => {
-    const response = await axios.get(`http://localhost:4000/a5/add/${a}/${b}`);
+    const response = await axios.get(`https://kanbas-node-server-app-0fo0.onrender.com/a5/add/${a}/${b}`);
     setResult(response.data);
   };
   const fetchSubtraction = async (a: any, b: any) => {
     const response = await axios.get(
-      `http://localhost:4000/a5/subtract/${a}/${b}`,
+      `https://kanbas-node-server-app-0fo0.onrender.com/a5/subtract/${a}/${b}`,
     );
     setResult(response.data);
   };
@@ -52,44 +52,44 @@ function EncodingParametersInURLs() {
         Fetch Substraction of {a} - {b}
       </button>
       <h3>Path Parameters</h3>
-      <a href={`http://localhost:4000/a5/add/${a}/${b}`}>
+      <a href={`https://kanbas-node-server-app-0fo0.onrender.com/a5/add/${a}/${b}`}>
         Add {a} + {b}
       </a>
       <br />
-      <a href={`http://localhost:4000/a5/subtract/${a}/${b}`}>
+      <a href={`https://kanbas-node-server-app-0fo0.onrender.com/a5/subtract/${a}/${b}`}>
         Substract {a} - {b}
       </a>
       <br />
-      <a href={`http://localhost:4000/a5/multiply/${a}/${b}`}>
+      <a href={`https://kanbas-node-server-app-0fo0.onrender.com/a5/multiply/${a}/${b}`}>
         Multiply {a} * {b}
       </a>
       <br />
-      <a href={`http://localhost:4000/a5/divide/${a}/${b}`}>
+      <a href={`https://kanbas-node-server-app-0fo0.onrender.com/a5/divide/${a}/${b}`}>
         Divide {a} / {b}
       </a>
       <br />
       <h3>Query Parameters</h3>
       <a
         className="btn btn-primary"
-        href={`http://localhost:4000/a5/calculator?operation=add&a=${a}&b=${b}`}
+        href={`https://kanbas-node-server-app-0fo0.onrender.com/a5/calculator?operation=add&a=${a}&b=${b}`}
       >
         Add {a} + {b}
       </a>
       <a
         className="btn btn-danger"
-        href={`http://localhost:4000/a5/calculator?operation=subtract&a=${a}&b=${b}`}
+        href={`https://kanbas-node-server-app-0fo0.onrender.com/a5/calculator?operation=subtract&a=${a}&b=${b}`}
       >
         Substract {a} - {b}
       </a>
       <a
         className="btn btn-danger"
-        href={`http://localhost:4000/a5/calculator?operation=multiply&a=${a}&b=${b}`}
+        href={`https://kanbas-node-server-app-0fo0.onrender.com/a5/calculator?operation=multiply&a=${a}&b=${b}`}
       >
         Multiply {a} * {b}
       </a>
       <a
         className="btn btn-danger"
-        href={`http://localhost:4000/a5/calculator?operation=divide&a=${a}&b=${b}`}
+        href={`https://kanbas-node-server-app-0fo0.onrender.com/a5/calculator?operation=divide&a=${a}&b=${b}`}
       >
         Divide {a} / {b}
       </a>

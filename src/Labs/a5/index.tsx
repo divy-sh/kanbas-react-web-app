@@ -6,7 +6,7 @@ const Assignment5 = () => {
   return (
     <div className="p-2">
       <h1>Assignment 5</h1>
-      <a href="http://localhost:4000/a5/welcome">Welcome</a>
+      <a href="https://kanbas-node-server-app-0fo0.onrender.com/a5/welcome">Welcome</a>
       <hr />
       <EncodingParametersInURLs />
       <hr />
