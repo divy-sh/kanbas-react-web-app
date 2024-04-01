@@ -11,14 +11,14 @@ import axios from "axios";
 
 function Kanbas() {
   const [courses, setCourses] = useState<any[]>([]);
-  const COURSES_API = "http://localhost:4000/api/courses";
+  const COURSES_API = "https://kanbas-node-server-app-0fo0.onrender.com/api/courses";
   const findAllCourses = async () => {
     const response = await axios.get(COURSES_API);
     setCourses(response.data);
   };
   useEffect(() => {
     findAllCourses();
-  }, courses);
+  }, []);
 
   const [course, setCourse] = useState({
     _id: "0",
@@ -35,6 +35,7 @@ function Kanbas() {
   };
   const deleteCourse = async (courseId: string) => {
     const response = await axios.delete(`${COURSES_API}/${courseId}`);
+    findAllCourses();
   };
   const updateCourse = async () => {
     const response = await axios.put(`${COURSES_API}/${course._id}`, course);
