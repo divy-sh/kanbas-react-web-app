@@ -60,7 +60,8 @@ export const findUsersByRole = async (role: string) => {
 };
 
 export const signup = async (user: any) => {
-    const response = await api.post(`${USERS_API}/signup`, user);
+    const response = await api.post(`${USERS_API}/register`, user);
+    localStorage.setItem('token', response.data.token);
     return response.data;
 };
 
