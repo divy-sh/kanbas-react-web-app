@@ -76,7 +76,7 @@ function Dashboard({
       <div className="row">
         <div className="row row-cols-1 row-cols-md-5 g-4">
           {courses.map((course) => (
-            <div key={course._id} className="col" style={{ width: 300 }}>
+            <div key={course.id} className="col" style={{ width: 300 }}>
               <div className="card">
                 <img
                   src={`/images/${course.image}`}
@@ -90,7 +90,7 @@ function Dashboard({
                 <div className="card-body">
                   <Link
                     className="card-title"
-                    to={`/Kanbas/Courses/${course._id}/Home`}
+                    to={`/Kanbas/Courses/${course.id}/Home`}
                     style={{
                       textDecoration: "none",
                       color: "navy",
@@ -101,7 +101,7 @@ function Dashboard({
                   </Link>
                   <p className="card-text">{course.name}</p>
                   <Link
-                    to={`/Kanbas/Courses/${course._id}/Home`}
+                    to={`/Kanbas/Courses/${course.id}/Home`}
                     className="btn btn-primary"
                   >
                     Go
