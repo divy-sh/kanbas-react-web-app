@@ -3,10 +3,11 @@ import WorkingWithArrays from "./WorkingWithArrays";
 import EncodingParametersInURLs from "./EncodingParametersInUrls";
 import WorkingWithObjects from "./WorkingWithObjects";
 const Assignment5 = () => {
+  const link = `${process.env.REACT_APP_API_BASE}/a5/welcome`;
   return (
     <div className="p-2">
       <h1>Assignment 5</h1>
-      <a href="https://kanbas-node-server-app-0fo0.onrender.com/a5/welcome">Welcome</a>
+      <a href={link}>Welcome</a>
       <hr />
       <EncodingParametersInURLs />
       <hr />
