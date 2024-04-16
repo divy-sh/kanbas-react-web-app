@@ -3,6 +3,9 @@ import * as client from "./client";
 import { User } from "./client";
 import { BsPencil, BsFillCheckCircleFill, BsTrash3Fill, BsPlusCircleFill } from "react-icons/bs";
 import { useNavigate } from "react-router";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function UserTable() {
     const navigate = useNavigate();
     const [users, setUsers] = useState<User[]>([]);
@@ -10,7 +13,8 @@ export default function UserTable() {
         try {
             const users = await client.findAllUsers();
             setUsers(users);
-        } catch (e) {
+        } catch (e: any) {
+            toast.error(e.response.data);
             navigate('/Kanbas/Account/signin');
         }
     };
@@ -24,7 +28,8 @@ export default function UserTable() {
             const users = await client.findUsersByRole(role);
             setRole(role);
             setUsers(users);
-        } catch (e) {
+        } catch (e: any) {
+            toast.error(e.response.data);
             navigate('/Kanbas/Account/signin');
         }
     };
@@ -32,7 +37,8 @@ export default function UserTable() {
         try {
             const newUser = await client.createUser(user);
             setUsers([newUser, ...users]);
-        } catch (err) {
+        } catch (err: any) {
+            toast.error(err.response.data);
             console.log(err);
         }
     };
@@ -41,8 +47,8 @@ export default function UserTable() {
         try {
             await client.deleteUser(user);
             setUsers(users.filter((u) => u._id !== user._id));
-        } catch (err) {
-            console.log(err);
+        } catch (err: any) {
+            toast.error(err.response.data);
         }
     };
 
@@ -50,8 +56,8 @@ export default function UserTable() {
         try {
             const u = await client.findUserById(user._id);
             setUser(u);
-        } catch (err) {
-            console.log(err);
+        } catch (err: any) {
+            toast.error(err.response.data);
         }
     };
     const updateUser = async () => {
@@ -59,14 +65,15 @@ export default function UserTable() {
             const status = await client.updateUser(user);
             setUsers(users.map((u) =>
                 (u._id === user._id ? user : u)));
-        } catch (err) {
-            console.log(err);
+        } catch (err: any) {
+            toast.error(err.response.data);
         }
     };
 
     useEffect(() => { fetchUsers(); }, []);
     return (
         <div>
+            <ToastContainer/>
             <select
                 onChange={(e) => fetchUsersByRole(e.target.value)}
                 value={role || "USER"}

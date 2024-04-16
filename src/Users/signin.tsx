@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { User } from "./client";
 import * as client from "./client";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function Signin() {
-  const [error, setError] = useState("");
   const [credentials, setCredentials] = useState<User>({
     _id: "", username: "", password: "", firstName: "", lastName: "", role: "USER"
   });
@@ -13,7 +15,7 @@ export default function Signin() {
       await client.signin(credentials);
       navigate("/Kanbas/Account/Profile");
     } catch (err: any) {
-      setError(err.response.data.message);
+      toast.error(err.response.data);
     }
   };
   const fetchProfile = async () => {
@@ -28,7 +30,7 @@ export default function Signin() {
   }, []);
   return (
     <div>
-      {error && <div>{error} "Login failed, please check your credentials"</div>}
+      <ToastContainer />
       <h1>Signin</h1>
       <input className="form-control m-2" value={credentials.username} onChange={(e) =>
         setCredentials({ ...credentials, username: e.target.value })} />

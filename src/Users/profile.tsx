@@ -1,6 +1,9 @@
 import * as client from "./client";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function Profile() {
     const [profile, setProfile] = useState({
         _id: "", username: "", password: "",
@@ -11,7 +14,8 @@ export default function Profile() {
         try {
             const account = await client.profile();
             setProfile(account);
-        } catch (e) {
+        } catch (e: any) {
+            toast.error(e.response.data);
             navigate("/Kanbas/Account/Signin");
         }
     };
@@ -27,6 +31,7 @@ export default function Profile() {
     };
     return (
         <div>
+            <ToastContainer />
             <h1>Profile</h1>
             {profile && (
                 <div>

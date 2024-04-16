@@ -12,21 +12,26 @@ export interface User {
 
 export const signin = async (credentials: User) => {
     const response = await api.post(`${USERS_API}/signin`, credentials);
+    sessionStorage.setItem('token', response.data.token);
     return response.data;
 };
 
 export const profile = async () => {
-    const response = await api.post(`${USERS_API}/profile`);
+    const token = sessionStorage.getItem('token');
+    const response = await axios.post(`${USERS_API}/profile`, null, {headers: { 'Authorization': `Bearer ${token}`,}});
     return response.data;
 };
 
 export const updateUser = async (user: any) => {
-    const response = await api.put(`${USERS_API}/${user._id}`, user);
+    const token = sessionStorage.getItem('token');
+    const response = await api.put(`${USERS_API}/${user._id}`, user, {headers: { 'Authorization': `Bearer ${token}`,}});
+    sessionStorage.setItem('token', response.data.token);
     return response.data;
 };
 
 export const findAllUsers = async () => {
-    const response = await api.get(`${USERS_API}`);
+    const token = sessionStorage.getItem('token');
+    const response = await api.get(`${USERS_API}`, {headers: { 'Authorization': `Bearer ${token}`,}});
     return response.data;
 };
 
@@ -36,19 +41,22 @@ export const createUser = async (user: any) => {
 };
 
 export const deleteUser = async (user: any) => {
+    const token = sessionStorage.getItem('token');
     const response = await api.delete(
-        `${USERS_API}/${user._id}`);
+        `${USERS_API}/${user._id}`, {headers: { 'Authorization': `Bearer ${token}`,}});
     return response.data;
 };
 
 export const findUserById = async (id: string) => {
-    const response = await api.get(`${USERS_API}/${id}`);
+    const token = sessionStorage.getItem('token');
+    const response = await api.get(`${USERS_API}/${id}`, {headers: { 'Authorization': `Bearer ${token}`,}});
     return response.data;
 };
 
 export const findUsersByRole = async (role: string) => {
+    const token = sessionStorage.getItem('token');
     const response = await
-        api.get(`${USERS_API}?role=${role}`);
+        api.get(`${USERS_API}?role=${role}`, {headers: { 'Authorization': `Bearer ${token}`,}});
     return response.data;
 };
 
@@ -58,6 +66,5 @@ export const signup = async (user: any) => {
 };
 
 export const signout = async () => {
-    const response = await api.post(`${USERS_API}/signout`);
-    return response.data;
+    sessionStorage.removeItem('token')
 };
