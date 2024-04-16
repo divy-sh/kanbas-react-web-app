@@ -29,20 +29,20 @@ function WorkingWithObjects() {
     description: "moduledesc",
     course: "pizza",
   });
-  const ASSIGNMENT_URL = "https://kanbas-node-server-app-0fo0.onrender.com/a5/assignment";
-  const MODULE_URL = "https://kanbas-node-server-app-0fo0.onrender.com/a5/module";
+  const ASSIGNMENT_URL = `${process.env.REACT_APP_API_BASE}/a5/assignment`;
+  const MODULE_URL = `${process.env.REACT_APP_API_BASE}/a5/module`;
 
   return (
     <div>
       <h3>Working With Objects</h3>
       <h4>Retrieving Objects</h4>
-      <a className="btn btn-primary" href="https://kanbas-node-server-app-0fo0.onrender.com/a5/assignment">
+      <a className="btn btn-primary" href={process.env.REACT_APP_API_BASE + "/a5/assignment"}>
         Get Assignment
       </a>
       <h4>Retrieving Properties</h4>
       <a
         className="btn btn-primary"
-        href="https://kanbas-node-server-app-0fo0.onrender.com/a5/assignment/title"
+        href={process.env.REACT_APP_API_BASE + "/a5/assignment/title"}
       >
         Get Title
       </a>
@@ -102,13 +102,13 @@ function WorkingWithObjects() {
         checked={assignment.completed}
       />
       <h4>Get Module</h4>
-      <a className="btn btn-primary" href="https://kanbas-node-server-app-0fo0.onrender.com/a5/module">
+      <a className="btn btn-primary" href={process.env.REACT_APP_API_BASE + "/a5/module"}>
         Get Module
       </a>
       <h4>Get Module Name</h4>
       <a
         className="btn btn-primary"
-        href="https://kanbas-node-server-app-0fo0.onrender.com/a5/module/name"
+        href={process.env.REACT_APP_API_BASE + "/a5/module/name"}
       >
         Get Module Name
       </a>
