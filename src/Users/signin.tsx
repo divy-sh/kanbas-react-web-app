@@ -37,7 +37,7 @@ export default function Signin() {
       <input className="form-control m-2" value={credentials.password} onChange={(e) =>
         setCredentials({ ...credentials, password: e.target.value })} />
       <button className="btn btn-primary" onClick={signin}> Signin </button>
-      <Link className="btn btn-success" to="/Kanbas/Account/signup">Go to About Page</Link>
+      <Link className="btn btn-success float-end" to="/Kanbas/Account/signup"> Signup </Link>
     </div>
   );
 }

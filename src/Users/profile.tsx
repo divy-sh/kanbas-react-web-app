@@ -47,7 +47,7 @@ export default function Profile() {
                         setProfile({ ...profile, firstName: e.target.value })} />
                     <input className="form-control m-2" value={profile.lastName} onChange={(e) =>
                         setProfile({ ...profile, lastName: e.target.value })} />
-                    <input className="form-control m-2" value={profile.dob} type="date" onChange={(e) =>
+                    <input className="form-control m-2" value={profile.dob.split('T')[0]} type="date" onChange={(e) =>
                         setProfile({ ...profile, dob: e.target.value })} />
                     <input className="form-control m-2" value={profile.email} onChange={(e) =>
                         setProfile({ ...profile, email: e.target.value })} />
