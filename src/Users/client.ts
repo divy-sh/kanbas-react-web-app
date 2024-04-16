@@ -25,7 +25,6 @@ export const profile = async () => {
 export const updateUser = async (user: any) => {
     const token = sessionStorage.getItem('token');
     const response = await api.put(`${USERS_API}/${user._id}`, user, {headers: { 'Authorization': `Bearer ${token}`,}});
-    sessionStorage.setItem('token', response.data.token);
     return response.data;
 };
 
